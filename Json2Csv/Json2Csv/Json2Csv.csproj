@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="data\history_data_02_01.json" />
+    <None Remove="image\csv_file.png" />
+    <None Remove="image\json_file.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="data\history_data_02_01.json" />
+    <Content Include="image\csv_file.png" />
+    <Content Include="image\json_file.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+</Project>
