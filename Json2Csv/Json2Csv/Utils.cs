@@ -119,16 +119,16 @@ namespace Json2Csv
                     var dir = CreateDirForResult(EpidemicType.Province, directory);
                     var path = dir + $"Epidemic_Province_{date.ToString("yyyy_MM_dd")}.txt";
                     // Write title
-                    File.WriteAllText(path, "ID ProvinceName ConfirmedCount DeadCount CuredCount \r\n");
-                    Console.WriteLine("ID ProvinceName ConfirmedCount DeadCount CuredCount \r\n");
+                    File.WriteAllText(path, "ID,ProvinceName,ConfirmedCount,DeadCount,CuredCount \r\n");
+                    Console.WriteLine("ID,ProvinceName,ConfirmedCount,DeadCount,CuredCount \r\n");
                     // Write data
                     for (int k = 0; k < dailyEpidemicList_2.Count; k++)
                     {
                         var province = dailyEpidemicList_2[k] as ProvinceEpidemic;
-                        File.AppendAllText(path, $"{province.ID} {province.ProvinceName} {province.ConfirmedCount} " +
-                            $"{province.DeadCount} {province.CuredCount} \r\n");
-                        Console.WriteLine($"{province.ID} {province.ProvinceName} {province.ConfirmedCount} " +
-                            $"{province.DeadCount} {province.CuredCount} \r\n");
+                        File.AppendAllText(path, $"{province.ID},{province.ProvinceName},{province.ConfirmedCount}," +
+                            $"{province.DeadCount},{province.CuredCount} \r\n");
+                        Console.WriteLine($"{province.ID},{province.ProvinceName},{province.ConfirmedCount}," +
+                            $"{province.DeadCount},{province.CuredCount} \r\n");
                     }
                 }
 
@@ -190,5 +190,5 @@ namespace Json2Csv
             var baseDir = AppDomain.CurrentDomain.BaseDirectory;
             return baseDir.Split("bin").FirstOrDefault();
         }
-    }  
+    }
 }
