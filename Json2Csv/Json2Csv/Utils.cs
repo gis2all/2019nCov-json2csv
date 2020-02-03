@@ -148,7 +148,6 @@ namespace Json2Csv
                             $"{city.DeadCount} {city.CuredCount} \r\n");
                         Console.WriteLine($"{city.ID},{city.ProvinceName},{city.CityName},{city.ProvinceName + city.CityName},{city.ConfirmedCount}," +
                             $"{city.DeadCount},{city.CuredCount} \r\n");
-
                     }
                 }
             }
@@ -174,7 +173,6 @@ namespace Json2Csv
                         Directory.CreateDirectory(dir);
                     }
                     return dir;
-
                 case EpidemicType.City:
                     dir += ("City" + Path.DirectorySeparatorChar);
                     if (!Directory.Exists(dir))
@@ -192,11 +190,5 @@ namespace Json2Csv
             var baseDir = AppDomain.CurrentDomain.BaseDirectory;
             return baseDir.Split("bin").FirstOrDefault();
         }
-    }
-
-    public enum EpidemicType
-    {
-        Province,
-        City
-    }
+    }  
 }

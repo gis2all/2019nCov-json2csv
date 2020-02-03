@@ -34,4 +34,10 @@ namespace Json2Csv
         public int CuredCount { get; set; }
         public int DeadCount { get; set; }
     }
+
+    public enum EpidemicType
+    {
+        Province,
+        City
+    }
 }
